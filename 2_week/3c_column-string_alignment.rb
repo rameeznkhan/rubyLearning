@@ -10,3 +10,10 @@ metd(100)
 metd(1000)
 
 puts "\n\n\n\n"
+
+def linify(text)
+  split = text.split(":")
+  print("%11s",split)
+end
+
+linify("This is: Text")
