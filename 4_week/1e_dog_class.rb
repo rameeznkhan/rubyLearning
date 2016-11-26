@@ -15,10 +15,6 @@ class Dog
   def chase_cat
     puts "Chasing cat"
   end
-
-  def teach_trick()
-
-  end
 end
 
 d = Dog.new('leo')
