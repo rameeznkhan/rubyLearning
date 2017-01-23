@@ -2,6 +2,7 @@ speaking = true
 count = 0
 while speaking
   start_sonny = gets.chomp
+  if start_sonny.length > 0
   if start_sonny == start_sonny.upcase
     if start_sonny == "BYE"
       count = count + 1
@@ -17,4 +18,4 @@ while speaking
     puts "HUH?! SPEAK UP SONNY"
   end
 end
-
+end
