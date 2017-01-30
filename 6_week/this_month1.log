@@ -1,0 +1,8 @@
+# Logfile created on 2017-01-30 23:05:44 +0530 by logger.rb/53141
+D, [2017-01-30T23:05:44.393401 #720] DEBUG -- : Char count: 22
+D, [2017-01-30T23:05:44.393444 #720] DEBUG -- : Char count excluding spaces: 18
+D, [2017-01-30T23:05:44.393461 #720] DEBUG -- : Word count 5
+D, [2017-01-30T23:05:44.393483 #720] DEBUG -- : Sentence count: 1
+D, [2017-01-30T23:05:44.393493 #720] DEBUG -- : Average words: 5
+D, [2017-01-30T23:05:44.393501 #720] DEBUG -- : Average sentences: 1
+E, [2017-01-30T23:06:17.792911 #778] ERROR -- : Error with file : No such file or directory @ rb_sysopen - text.txt

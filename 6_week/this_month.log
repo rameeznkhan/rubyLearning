@@ -1,0 +1,7 @@
+# Logfile created on 2017-01-30 22:56:35 +0530 by logger.rb/53141
+D, [2017-01-30T22:58:05.339771 #99934] DEBUG -- : Char count: 22
+D, [2017-01-30T22:58:05.339832 #99934] DEBUG -- : Char count excluding spaces: 18
+D, [2017-01-30T22:58:05.339851 #99934] DEBUG -- : Word count 5
+D, [2017-01-30T22:58:05.339874 #99934] DEBUG -- : Sentence count: 1
+D, [2017-01-30T22:58:05.339884 #99934] DEBUG -- : Average words: 5
+D, [2017-01-30T22:58:05.339893 #99934] DEBUG -- : Average sentences: 1
