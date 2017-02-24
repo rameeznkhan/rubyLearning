@@ -11,11 +11,11 @@ end
 def load
   File.open('klass', 'r+') do |f|
     dump = Marshal.load(f)
-    puts dump.say_hello
+    dump
   end
 end
 
 dump
-load
+puts load
 
 
