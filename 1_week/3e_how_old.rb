@@ -3,7 +3,7 @@
 # doctest: setup variables for test
 # >> age_in_seconds = 9.79e8
 #
-# doctest:age_in_years should not force lost precision
+# doctest: age_in_years should not force lost precision
 # >> years_from(age_in_seconds).round(2)
 # => 31.02
 #
