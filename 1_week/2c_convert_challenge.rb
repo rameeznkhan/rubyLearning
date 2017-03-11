@@ -1,54 +1,65 @@
-#conversion challenge
-def celsiusToFahrenheit(value)
-  return (value * 9/5) + 32
+# conversion challenge
+# doctest : celsius test
+# >> celsius = Celsius.new(32)
+# >> celsius.to_kelvin
+# => 305.15
+
+# Temperature Base Class
+class TempUnit
+  attr_accessor :temp
+
+  def initialize(value)
+    @temp = value
+  end
 end
 
-def fahrenheitToCelsius(value)
-  return (value - 32) * 5/9
+# Class for temperature Unit Fahrenheit
+class Fahrenheit < TempUnit
+  def to_celsius
+    (@temp - 32.0) * 5.0 / 9
+  end
+
+  def to_kelvin
+    (@temp + 459.67) * 5.0 / 9
+  end
 end
 
-def celsiusToKelvin(value)
-  return value + 273.15
+# Class for temperature unit Celsius
+class Celsius < TempUnit
+  def to_fahrenheit
+    (@temp * 9.0 / 5) + 32
+  end
+
+  def to_kelvin
+    @temp + 273.15
+  end
 end
 
-def kelvinToCelsius(value)
-  return value - 273.15
-end
+# Class for temperature unit Kelvin
+class Kelvin < TempUnit
+  def to_fahrenheit
+    (@temp * 9.0 / 5.0) - 459.67
+  end
 
-def fahrenheitToKelvin(value)
-  return (value + 459.67) *  5/9
+  def to_celsius
+    @temp - 273.15
+  end
 end
-
-def kelvinToFahrenheit(value)
-  return (value* 9/5) -459.67
-end
-puts "Please enter the unit the temp is entered in Kelvin = K, Fahrenheit = F, Celsius = C?"
+puts 'Please enter the unit Kelvin = K, Fahrenheit = F, Celsius = C?'
 initial_unit = gets.chomp.upcase
-puts "Please enter the temp?"
+puts 'Please enter the temp?'
 temp_value = gets.chomp.to_f
-puts "Please enter the unit to be converted to Kelvin = K, Fahrenheit = F, Celsius = C"
-scale = gets.chomp.upcase
-converted_value = 0
-message = ""
-if initial_unit == "C" and scale == "F"
-  converted_value = celsiusToFahrenheit(temp_value)
-  message =  "Celsius to Fahrenheit is"
-elsif initial_unit == "C" and scale == "K"
-  converted_value = celsiusToKelvin(temp_value)
-  message =  "Celsius to Kelvin is"
-elsif initial_unit == "F" and scale == "C"
-  converted_value = fahrenheitToCelsius(temp_value)
-  message = "Fahrenheit to Celsius is"
-elsif initial_unit == "F" and scale == "K"
-  converted_value = fahrenheitToKelvin(temp_value)
-  message =  "Fahrenheit to Kelvin is"
-elsif initial_unit == "K" and scale == "C"
-  converted_value = kelvinToCelsius(temp_value)
-  message = "Kelvin to Celsius is"
-elsif initial_unit == "K" and scale == "F"
-  converted_value = kelvinToFahrenheit(temp_value)
-  message =  "Kelvin to Fahrenheit is"
+
+if initial_unit == 'C'
+  celsius = Celsius.new(temp_value)
+  puts "Celsius to Fahrenheit: #{celsius.to_fahrenheit}"
+  puts "Celsius to Kelvin: #{celsius.to_kelvin}"
+elsif initial_unit == 'K'
+  kelvin = Kelvin.new(temp_value)
+  puts "Kelvin to Celsius: #{kelvin.to_celsius}"
+  puts "Kelvin to Fahrenheit: #{kelvin.to_fahrenheit}"
+elsif initial_unit == 'F'
+  fahrenheit = Fahrenheit.new(temp_value)
+  puts "Fahrenheit to Celsius: #{fahrenheit.to_celsius}"
+  puts "Fahrenheit to Kelvin: #{fahrenheit.to_kelvin}"
 end
-puts "#{temp_value} #{message} #{converted_value}"
-
-
